@@ -1,7 +1,5 @@
 const q = require('daskeyboard-applet');
 const request = require('request-promise');
-// module to decompress stackoverflow api response
-const zlib = require('zlib');
 const logger = q.logger;
 
 const apiUrl = `https://api.stackexchange.com/2.2`;
@@ -68,7 +66,7 @@ class StackOverflowInboxItem {
 class QStackoverflow extends q.DesktopApp {
   constructor() {
     super();
-    this.pollingInterval = 1000 * 60; // every minute
+    this.pollingInterval = 1000 * 60 * 2; // every 2 minute
   }
 
 
@@ -91,18 +89,29 @@ class QStackoverflow extends q.DesktopApp {
   async run() {
     this.deleteOldSignals();
     return this.getInbox().then(body => {
+      // if no unread items. NO signal created
+      if (!body.items.length === 0) {
+        return null;
+      }
+
+      /* Blink in blud for a new notification */
       const signalColor = '#0000FF';
       const signalEffect = q.Effects.BLINK;
+
+      /* Get the latest inbox item from stack overflow api response */
       const latestInboxItem = new StackOverflowInboxItem(body.items[0]);
+      // construct signal message
       const signalMessage = `${latestInboxItem.getMessageDependingOnItemType()}:`
-      + '<br>' + `${latestInboxItem.title}`;
+        + '<br>' + `${latestInboxItem.title}`;
+
+      // construct the signal
       let signal = new q.Signal({
         points: [[new q.Point(signalColor, signalEffect)]],
-        name: 'Stackoverflow',
+        name: 'Stack Overflow',
         message: signalMessage,
         link: {
           url: `${latestInboxItem.link}`,
-          label: `Show in stackoverflow`
+          label: `Show in Stack Overflow`
         }
       })
       return signal;
@@ -120,7 +129,6 @@ class QStackoverflow extends q.DesktopApp {
   async getInbox() {
     logger.info(`Getting Inbox`);
     return this.getOauthClientKeysFromProxy().then(oauthCredentials => {
-      console.log('sldkfjsldkfj', oauthCredentials);
       logger.info(`Got Oauth client keys from proxy`);
       /* Stack exchange API sends compressed response. We need to decompress it.
        * More info here: https://api.stackexchange.com/docs/compression
@@ -131,7 +139,7 @@ class QStackoverflow extends q.DesktopApp {
           'Accept-Encoding': 'GZIP'
         },
         gzip: true,
-        uri: apiUrl + `/me/inbox`,
+        uri: apiUrl + `/me/inbox/unread`,
         method: 'GET',
         qs: {
           site: 'stackoverflow',

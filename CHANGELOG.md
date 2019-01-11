@@ -1,5 +1,5 @@
 
-# Changelog Q Applet Stackoverflow
+# Changelog Q Applet Stack Overflow
 
 #### 1.0.0 (2019-01-11)
 
