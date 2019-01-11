@@ -21,7 +21,6 @@
   "license": "MIT",
   "readMeUrl": "README.md",
   "readMeEndUserUrl": "README_ENDUSER.md",
-
   "engines": {
     "das-keyboard-q": "3.1.1"
   },
@@ -42,9 +41,7 @@
       "height": 1
     },
     "authorization": {
-      "type": "apiKey",
-      "hint": "Login or signup for free to get your API key",
-      "supportUrl": "https://montastic.com/me"
+      "type": "oauth2"
     }
   },
   "devDependencies": {
