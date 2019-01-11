@@ -1,10 +1,8 @@
-# Changelog Q Applet Montastic
 
-## Version 1.0.0 - October 30, 2018
+# Changelog Q Applet Stackoverflow
 
-First release
+#### 1.0.0 (2019-01-11)
 
-## Version 1.0.5 - December 06, 2018
+##### New Features
 
-Logic issue fixed.
-Images and README updated.
+*  First release
