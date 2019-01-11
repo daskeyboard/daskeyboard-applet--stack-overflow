@@ -1,0 +1,53 @@
+{
+  "name": "daskeyboard-applet--stackoverflow",
+  "displayName": "Stackoverflow",
+  "publisher": "Das Keyboard",
+  "version": "1.0.0",
+  "officialProductName": "Stackoverflow",
+  "appUrl": "https://stackoverflow.com",
+  "description": "Blink a key in blue for new inbox items on  a stackoverflow account",
+  "longDescription": "Tracks stackoverflow inbox items on a Das Keyboard Q keyboard. Requires a stackoverflow account",
+  "icon": "assets/icon.png",
+  "image": "assets/image-missing.png",
+  "videoUrl": "",
+  "publisherName": "Das Keyboard",
+  "authorName": "Das Keyboard",
+  "authorUrl": "https://twitter.com/daskeyboard",
+  "issuesUrl": "https://github.com/daskeyboard/daskeyboard-applet--stackoverflow/issues",
+  "homePageUrl": "https://montastic.com",
+  "developerRepoUrl": "https://github.com/daskeyboard/q-applet-montastic",
+  "licenseUrl": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+  "changelogUrl": "CHANGELOG.md",
+  "license": "MIT",
+  "readMeUrl": "README.md",
+  "readMeEndUserUrl": "README_ENDUSER.md",
+
+  "engines": {
+    "das-keyboard-q": "3.1.1"
+  },
+  "isSingleton": false,
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "watch": "nodemon .",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "daskeyboard-applet": "^2.11.1",
+    "request-promise": "^4.2.2"
+  },
+  "qConfig": {
+    "geometry": {
+      "width": 1,
+      "height": 1
+    },
+    "authorization": {
+      "type": "apiKey",
+      "hint": "Login or signup for free to get your API key",
+      "supportUrl": "https://montastic.com/me"
+    }
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
