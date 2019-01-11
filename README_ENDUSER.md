@@ -1,12 +1,10 @@
-# Montastic
+# Stackoverflow
 
-Montastic monitor URLs and sends an email when a website goes down.
+This applet notifies for unread inbox items from a Stackoverflow account by
+making a Das Keyboard Q key blink in blue.
 
-This applet displays Montastic alarms on a Q device:
+Stack Overflow is a question and answer site for professional and enthusiast programmers. It's built and run by you as part of the Stack Exchange network of Q&A sites. With your help, we're working together to build a library of detailed answers to every question about programming.
 
-- `green`: website is OK
-- `red`: website alarm
+For more information visit <https://www.stackoverflow.com>.
 
-To get started, signup for a free Montastic account at <https://www.montastic.com>.
-
-![Montastic monitoring on a Das Keybaord Q](assets/image.png "Montastic alert")
+![Stackoverflow inbox items on a Das Keybaord Q](assets/image.png "Stackoverflow alerts")
