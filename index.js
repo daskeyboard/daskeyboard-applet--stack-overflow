@@ -87,8 +87,8 @@ class QStackoverflow extends q.DesktopApp {
 
   /** ping Montastic and set the signal  */
   async run() {
-    this.deleteOldSignals();
     return this.getInbox().then(body => {
+      this.deleteOldSignals();
       // if no unread items. NO signal created
       if (body.items.length === 0) {
         return null;
