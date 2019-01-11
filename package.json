@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "officialProductName": "Stackoverflow",
   "appUrl": "https://stackoverflow.com",
-  "description": "Blink a key in blue for new inbox items on  a stackoverflow account",
+  "description": "Notifies for unread inbox items.",
   "longDescription": "Tracks stackoverflow inbox items on a Das Keyboard Q keyboard. Requires a stackoverflow account",
   "icon": "assets/icon.png",
   "image": "assets/image-missing.png",
