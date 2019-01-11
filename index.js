@@ -90,7 +90,7 @@ class QStackoverflow extends q.DesktopApp {
     this.deleteOldSignals();
     return this.getInbox().then(body => {
       // if no unread items. NO signal created
-      if (!body.items.length === 0) {
+      if (body.items.length === 0) {
         return null;
       }
 
