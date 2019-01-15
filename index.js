@@ -88,7 +88,6 @@ class QStackoverflow extends q.DesktopApp {
   /** Get the inbox from stackoverflow then send correct signal  */
   async run() {
     return this.getInbox().then(body => {
-      console.log('body', body);
       this.deleteOldSignals();
       // if no unread items. NO signal created
       if (body.items.length === 0) {
@@ -140,7 +139,7 @@ class QStackoverflow extends q.DesktopApp {
           'Accept-Encoding': 'GZIP'
         },
         gzip: true,
-        uri: apiUrl + `/me/inbox`,
+        uri: apiUrl + `/me/inbox/unread`,
         method: 'GET',
         qs: {
           site: 'stackoverflow',
