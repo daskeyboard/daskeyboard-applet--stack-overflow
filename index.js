@@ -85,9 +85,10 @@ class QStackoverflow extends q.DesktopApp {
     }
   }
 
-  /** ping Montastic and set the signal  */
+  /** Get the inbox from stackoverflow then send correct signal  */
   async run() {
     return this.getInbox().then(body => {
+      console.log('body', body);
       this.deleteOldSignals();
       // if no unread items. NO signal created
       if (body.items.length === 0) {
@@ -139,7 +140,7 @@ class QStackoverflow extends q.DesktopApp {
           'Accept-Encoding': 'GZIP'
         },
         gzip: true,
-        uri: apiUrl + `/me/inbox/unread`,
+        uri: apiUrl + `/me/inbox`,
         method: 'GET',
         qs: {
           site: 'stackoverflow',
@@ -150,7 +151,20 @@ class QStackoverflow extends q.DesktopApp {
         // resolveWithFullResponse: true
       }
 
-      return request(options);
+      return request(options).then(result => {
+        try {
+          // try to filter only the result for stack overflow
+          if (result.items) {
+            result.items = result.items.filter(item => {
+              return item.site && item.site.api_site_parameter === 'stackoverflow';
+            });
+          }
+        } catch (err) {
+          logger.error(`Error when trying to filter items ${err}`);
+          // return the initial result
+        }
+        return result;
+      });
     }).catch(err => {
       logger.error(`Error when trying to fetch user questions: ${err}`);
       throw new Error(`Error when trying to fetch user questions`);
