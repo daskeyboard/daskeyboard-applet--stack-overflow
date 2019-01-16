@@ -139,7 +139,7 @@ class QStackoverflow extends q.DesktopApp {
           'Accept-Encoding': 'GZIP'
         },
         gzip: true,
-        uri: apiUrl + `/me/inbox`,
+        uri: apiUrl + `/me/inbox/unread`,
         method: 'GET',
         qs: {
           site: 'stackoverflow',
