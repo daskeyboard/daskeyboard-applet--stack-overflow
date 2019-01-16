@@ -78,21 +78,21 @@ class QStackoverflow extends q.DesktopApp {
     while (this.signalLog && this.signalLog.length) {
       const signal = this.signalLog.pop().signal;
       logger.debug(`Deleting previous signal: ${signal.id}`)
-      await q.Signal.delete(signal).catch(error => {
-        logger.error(`Error deleting signal ${signal.id}: ${error}`);
-      });
+      await q.Signal.delete(signal);
       logger.debug(`Deleted the signal: ${signal.id}`);
     }
   }
 
   /** Get the inbox from stackoverflow then send correct signal  */
   async run() {
-    return this.getInbox().then(body => {
+    return this.getUnreadInbox().then(body => {
       this.deleteOldSignals();
       // if no unread items. NO signal created
       if (body.items.length === 0) {
+        logger.info(`No unread inbox found`);
         return null;
       }
+      logger.info(`Fetched ${body.items.length} unread inbox`);
 
       /* Blink in blud for a new notification */
       const signalColor = '#0000FF';
@@ -113,7 +113,7 @@ class QStackoverflow extends q.DesktopApp {
           url: `${latestInboxItem.link}`,
           label: `Show in Stack Overflow`
         }
-      })
+      });
       return signal;
     }).catch(err => {
       logger.error(`Error while getting stackoverflow inbox ${err}`);
@@ -126,7 +126,7 @@ class QStackoverflow extends q.DesktopApp {
   /**
    * Get the inbox of the user logged in the applet
    */
-  async getInbox() {
+  async getUnreadInbox() {
     logger.info(`Getting Inbox`);
     return this.getOauthClientKeysFromProxy().then(oauthCredentials => {
       logger.info(`Got Oauth client keys from proxy`);
@@ -139,7 +139,7 @@ class QStackoverflow extends q.DesktopApp {
           'Accept-Encoding': 'GZIP'
         },
         gzip: true,
-        uri: apiUrl + `/me/inbox/unread`,
+        uri: apiUrl + `/me/inbox`,
         method: 'GET',
         qs: {
           site: 'stackoverflow',
