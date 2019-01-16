@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "site": {
+        "styling": {
+          "tag_background_color": "#F3F1D9",
+          "tag_foreground_color": "#444444",
+          "link_color": "#10456A"
+        },
+        "related_sites": [
+          {
+            "relation": "meta",
+            "api_site_parameter": "meta.serverfault",
+            "site_url": "https://meta.serverfault.com",
+            "name": "Meta Server Fault"
+          },
+          {
+            "relation": "chat",
+            "site_url": "https://chat.stackexchange.com?tab=site&host=serverfault.com",
+            "name": "Chat Stack Exchange"
+          }
+        ],
+        "markdown_extensions": [
+          "Prettify"
+        ],
+        "launch_date": 1243296000,
+        "open_beta_date": 1241049600,
+        "site_state": "normal",
+        "high_resolution_icon_url": "https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon@2.png",
+        "twitter_account": "ServerFault",
+        "favicon_url": "https://cdn.sstatic.net/Sites/serverfault/img/favicon.ico",
+        "icon_url": "https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon.png",
+        "audience": "system and network administrators",
+        "site_url": "https://serverfault.com",
+        "api_site_parameter": "serverfault",
+        "logo_url": "https://cdn.sstatic.net/Sites/serverfault/img/logo.png",
+        "name": "Server Fault",
+        "site_type": "main_site"
+      },
+      "is_unread": true,
+      "creation_date": 1547589515,
+      "comment_id": 1233650,
+      "answer_id": 949238,
+      "item_type": "comment",
+      "link": "https://serverfault.com/posts/comments/1233650?noredirect=1",
+      "title": "How to scan our range of ports efficiently?"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 10000,
+  "quota_remaining": 9728
+}
