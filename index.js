@@ -94,7 +94,7 @@ class QStackoverflow extends q.DesktopApp {
       }
       logger.info(`Fetched ${body.items.length} unread inbox`);
 
-      /* Blink in blud for a new notification */
+      /* Blink in bleu for a new notification */
       const signalColor = '#0000FF';
       const signalEffect = q.Effects.BLINK;
 
