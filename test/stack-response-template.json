@@ -27,14 +27,14 @@
         "open_beta_date": 1241049600,
         "site_state": "normal",
         "high_resolution_icon_url": "https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon@2.png",
-        "twitter_account": "ServerFault",
+        "twitter_account": "StackOverflow",
         "favicon_url": "https://cdn.sstatic.net/Sites/serverfault/img/favicon.ico",
         "icon_url": "https://cdn.sstatic.net/Sites/serverfault/img/apple-touch-icon.png",
         "audience": "system and network administrators",
         "site_url": "https://serverfault.com",
         "api_site_parameter": "serverfault",
         "logo_url": "https://cdn.sstatic.net/Sites/serverfault/img/logo.png",
-        "name": "Server Fault",
+        "name": "Stack Overflow",
         "site_type": "main_site"
       },
       "is_unread": true,
@@ -42,8 +42,8 @@
       "comment_id": 1233650,
       "answer_id": 949238,
       "item_type": "comment",
-      "link": "https://serverfault.com/posts/comments/1233650?noredirect=1",
-      "title": "How to scan our range of ports efficiently?"
+      "link": "https://stackoverflow.com/questions/54189890/microsoft-azure-oauth2-invalid-request",
+      "title": "Microsoft Azure - OAuth2 - “invalid_request”"
     }
   ],
   "has_more": false,

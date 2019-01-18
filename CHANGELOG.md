@@ -1,5 +1,10 @@
-
 ### Changelog Q Applet Stack Overflow
+
+#### 2.0.1 (2019-01-17)
+
+##### Chore
+
+* **Content:**  Description content and image updated
 
 #### 2.0.0 (2019-01-15)
 
