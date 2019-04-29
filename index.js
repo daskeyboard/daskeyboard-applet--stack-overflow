@@ -66,7 +66,8 @@ class StackOverflowInboxItem {
 class QStackoverflow extends q.DesktopApp {
   constructor() {
     super();
-    this.pollingInterval = 1000 * 60 * 2; // every 2 minute
+    // run() every 2 minutes
+    this.pollingInterval = 1000 * 60 * 2;
   }
 
 
@@ -85,6 +86,7 @@ class QStackoverflow extends q.DesktopApp {
 
   /** Get the inbox from stackoverflow then send correct signal  */
   async run() {
+    logger.info("Stack Overflow running.");
     return this.getUnreadInbox().then(body => {
       this.deleteOldSignals();
       // if no unread items. NO signal created
@@ -115,11 +117,16 @@ class QStackoverflow extends q.DesktopApp {
         }
       });
       return signal;
-    }).catch(err => {
-      logger.error(`Error while getting stackoverflow inbox ${err}`);
+    }).catch(error => {
+      logger.error(`Error while getting Stack Overflow inbox ${error}`);
       // reset auth credential
       this.oauthCredentials = null;
-      return q.Signal.error([`Error while getting stackoverflow inbox`]);
+      if(`${error.message}`.includes("getaddrinfo")){
+        return q.Signal.error(
+          'The Stack Overflow service returned an error. <b>Please check your internet connection</b>.'
+        );
+      }
+      return q.Signal.error([`Error while getting Stack Overflow inbox. Detail: ${error}`]);
     });
   }
 
@@ -164,10 +171,10 @@ class QStackoverflow extends q.DesktopApp {
         }
         return result;
       });
-    }).catch(err => {
-      logger.error(`Error when trying to fetch user questions: ${err}`);
-      throw new Error(`Error when trying to fetch user questions`);
-    })
+    }).catch(error => {
+      logger.error(`Error when trying to fetch user questions: ${error}`);
+      throw new Error(`Error when trying to fetch user questions: ${error}`);
+    });
   }
 
 
