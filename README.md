@@ -3,6 +3,7 @@
 Displays Stack Overflow notifications for unread inbox items by making a Das Keyboard Q key blink in blue.
 
 Stack Overflow is a question and answer site for professional and enthusiast programmers.
+
 For more information about Stack Overflow visit <https://www.stackoverflow.com>.
 
 ![Stack Overflow inbox items on a Das Keybaord Q](assets/image.png "Das Keyboard Stack Overflow applet")
@@ -13,7 +14,7 @@ For more information about Stack Overflow visit <https://www.stackoverflow.com>.
 
 ## Installation
 
-Requires a Das Keyboard Q Series: www.daskeyboard.com.
+Requires a Das Keyboard Q Series: www.daskeyboard.com and a Stack Overflow account.
 
 Installation, configuration and uninstallation of applets is done within
 the Q Desktop application [https://www.daskeyboard.com/q](https://www.daskeyboard.com/q)
