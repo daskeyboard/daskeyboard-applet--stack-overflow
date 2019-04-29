@@ -2,7 +2,7 @@
   "name": "daskeyboard-applet--stack-overflow",
   "displayName": "Stack Overflow",
   "publisher": "Das Keyboard",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "officialProductName": "Stack Overflow",
   "appUrl": "https://stackoverflow.com",
   "description": "Notifies for unread inbox items.",
