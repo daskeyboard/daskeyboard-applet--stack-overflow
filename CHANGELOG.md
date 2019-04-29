@@ -1,6 +1,6 @@
 ### Changelog Q Applet Stack Overflow
 
-#### 2.0.2 (2019-01-17)
+#### 2.0.2 (2019-04-29)
 
 ##### Bug fixes
 
