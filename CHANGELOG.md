@@ -1,5 +1,11 @@
 ### Changelog Q Applet Stack Overflow
 
+#### 2.0.2 (2019-01-17)
+
+##### Bug fixes
+
+* Handled internet connection error
+
 #### 2.0.1 (2019-01-17)
 
 ##### Chore
