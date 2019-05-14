@@ -122,11 +122,13 @@ class QStackoverflow extends q.DesktopApp {
       // reset auth credential
       this.oauthCredentials = null;
       if(`${error.message}`.includes("getaddrinfo")){
-        return q.Signal.error(
-          'The Stack Overflow service returned an error. <b>Please check your internet connection</b>.'
-        );
+        // Do not send signal
+        // return q.Signal.error(
+        //   'The Stack Overflow service returned an error. <b>Please check your internet connection</b>.'
+        // );
+      }else{
+        return q.Signal.error([`Error while getting Stack Overflow inbox. Detail: ${error}`]);
       }
-      return q.Signal.error([`Error while getting Stack Overflow inbox. Detail: ${error}`]);
     });
   }
 
