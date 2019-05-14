@@ -1,5 +1,9 @@
 ### Changelog Q Applet Stack Overflow
 
+#### 2.0.3 (2019-05-14)
+
+* Removed internet connection error
+
 #### 2.0.2 (2019-04-29)
 
 ##### Bug fixes
