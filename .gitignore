@@ -1,3 +1,4 @@
 node_modules/
 # Test data
 test/auth.json
+.DS_STORE
